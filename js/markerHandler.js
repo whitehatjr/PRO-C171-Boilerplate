@@ -20,23 +20,14 @@ AFRAME.registerComponent("markerhandler", {
   },
 
   askTableNumber: function() {
-    var iconUrl =
-      "https://raw.githubusercontent.com/whitehatjr/menu-card-app/main/hunger.png";
-
-    swal({
-      title: "Welcome to Hunger!!",
-      icon: iconUrl,
-      content: {
-        element: "input",
-        attributes: {
-          placeholder: "Type your table number",
-          type: "number",
-          min: 1
-        }
-      }
-    }).then(inputValue => {
-      tableNumber = inputValue;
-    });
+    /* REPLACE COMMENTS TO ADD CODE HERE
+    
+    
+      
+      
+      */
+    
+    
   },
 
   handleMarkerFound: function(dishes, markerId) {
@@ -88,9 +79,11 @@ AFRAME.registerComponent("markerhandler", {
       });
 
       orderButtton.addEventListener("click", () => {
-        var tNumber;
-        tableNumber <= 9 ? (tNumber = `T0${tableNumber}`) : `T${tableNumber}`;
-        this.handleOrder(tNumber, dish);
+        /*REPLACE COMMENTS TO ADD CODE HERE TO CALL handleOrder()
+        
+        
+        
+        */
 
         swal({
           icon: "https://i.imgur.com/4NZ6uLY.jpg",
@@ -103,42 +96,12 @@ AFRAME.registerComponent("markerhandler", {
     }
   },
   handleOrder: function(tNumber, dish) {
-    // Reading currnt table order details
-    firebase
-      .firestore()
-      .collection("tables")
-      .doc(tNumber)
-      .get()
-      .then(doc => {
-        var details = doc.data();
-
-        if (details["current_orders"][dish.id]) {
-          // Increasing Current Quantity
-          details["current_orders"][dish.id]["quantity"] += 1;
-
-          //Calculating Subtotal of item
-          var currentQuantity = details["current_orders"][dish.id]["quantity"];
-
-          details["current_orders"][dish.id]["subtotal"] =
-            currentQuantity * dish.price;
-        } else {
-          details["current_orders"][dish.id] = {
-            item: dish.dish_name,
-            price: dish.price,
-            quantity: 1,
-            subtotal: dish.price * 1
-          };
-        }
-
-        details.total_bill += dish.price;
-
-        // Updating Db
-        firebase
-          .firestore()
-          .collection("tables")
-          .doc(doc.id)
-          .update(details);
-      });
+    /* REPLACE COMMENTS TO ADD CODE HERE
+    
+    
+      
+      
+      */
   },
 
   getDishes: async function() {

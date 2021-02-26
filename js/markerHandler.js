@@ -20,6 +20,7 @@ AFRAME.registerComponent("markerhandler", {
   },
 
   askTableNumber: function() {
+    var iconUrl = "https://raw.githubusercontent.com/whitehatjr/menu-card-app/main/hunger.png";
     /* REPLACE COMMENTS TO ADD CODE HERE
     
     

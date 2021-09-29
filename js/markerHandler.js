@@ -35,6 +35,7 @@ AFRAME.registerComponent("markerhandler", {
     // Getting today's day
     var todaysDate = new Date();
     var todaysDay = todaysDate.getDay();
+    
     // Sunday - Saturday : 0 - 6
     var days = [
       "sunday",
@@ -62,6 +63,15 @@ AFRAME.registerComponent("markerhandler", {
       model.setAttribute("position", dish.model_geometry.position);
       model.setAttribute("rotation", dish.model_geometry.rotation);
       model.setAttribute("scale", dish.model_geometry.scale);
+
+      //Update UI conent VISIBILITY of AR scene(MODEL , INGREDIENTS & PRICE)
+
+      /* REPLACE COMMENTS TO ADD CODE HERE
+    
+    
+      
+      
+      */
 
       // Changing button div visibility
       var buttonDiv = document.getElementById("button-div");
